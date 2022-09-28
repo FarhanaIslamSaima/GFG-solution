@@ -51,6 +51,10 @@ for(int i=0;i<a;i++){
 //dividend/divisor=quotient
 //dividend%devisor=reminder
 
+//here primarily values are being stored as dividend.In even index max_values are stored.and odd index min value ar store..
+//dividend=(arr[max_index]%max)*max+arr[i]
+//min%max=min
+
 
 
 
