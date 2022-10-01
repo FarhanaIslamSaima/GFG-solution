@@ -11,27 +11,31 @@
 using namespace std;
 int main(){
     int a;
-    cin>>a;
-    int arr[a];
 
+    cin>>a;
+        int arr[a];
+    vector<int>store;
     for(int i=0;i<a;i++){
         cin>>arr[i];
+        
+    }
+    int i=0;
+while(i<a){
+int correct=arr[i];
+    if(arr[i]!=-1 && arr[i]!=arr[correct]){
+        swap(arr[i],arr[correct]);
+    }
+    else{
+        i++;
     }
 
+}
 
-    for(int i=0;i<a;i++){
-        int temp=arr[i];
-        int j=i-1;
-        while(j>=0 && arr[j]>temp){
-            arr[j+1]=arr[j];
-            j--;
-        }
-        arr[j+1]=temp;
-    }
-
-    for(int i=0;i<a;i++){
+        for(int i=0;i<a;i++){
         cout<<arr[i]<<" ";
+        
     }
+
 
 
 
