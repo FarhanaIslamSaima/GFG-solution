@@ -11,31 +11,25 @@
 
 using namespace std;
 
-
 int main(){
-      
     string s;
     cin>>s;
-    string temp=" ";
-    vector<int>arr;
-    int max=0;
- for(char ch:s){
-    if(isdigit(ch)){
-        temp+=ch;
-    }
-    else{
+    int sum=s[0]-'0';
+
+       for(int i=1;i<s.length();i++){
+        if(s[i]=='0' || s[i]=='1'||sum<2){
+            sum+=(s[i]-'0');
      
-    
-  max=std::max(max,atoi(temp.c_str()));
-
-        temp=" ";
+     
+            
+        }
+        else{
+            sum*=(s[i]-'0');
+        
+        }
     }
- }
- cout<<max;
-
-
-
-
+    cout<<sum;
+ 
 
     return 0;
 }
