@@ -17,7 +17,9 @@ int main(){
     vector<int>arr;
      multimap<int, int> mp;
      unordered_map<int,int>mp2;
-
+  for(int i=0;i<s.lenght();i++){
+    if(s[i]=s)
+  }
     for(int i=0;i<s.length();i++){
         mp.insert(pair<int,int>(s[i],i));
         
@@ -32,6 +34,7 @@ int main(){
         cout<<arr[i]<<" ";
     }
        cout<<mp.count('c');
+       int max=
  
 
     return 0;
