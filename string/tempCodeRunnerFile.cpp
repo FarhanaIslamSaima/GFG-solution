@@ -1,4 +1,1 @@
-  if(max){
-                cout<<j+'a';
-                break;
-            }
+    str.erase(remove(str.begin(), str.end(), ' '), str.end());
