@@ -5,28 +5,25 @@ using namespace std;
 #include <algorithm>
 const int MAX_CHAR=26;
 int main(){
-    string s;
-   int max=0;
-    cin>>s;
-    char maxChar;
-    int count=1;
-  int l=0;
-  int r=1;
-  while(l<s.length()&& r<s.length()){
- 
-    if(s[l]==s[r]){
-        count++;
+    string str;
+   cin>>str;
+int n=str.length();
+    char res=str[0];
+  int count=0;
+  int currCount=1;
+  for(int i=0;i<n;i++){
+    if(i<n-1 && str[i]==str[i+1]){
+        currCount++;
     }
-    else{
-        max=std::max(count,max);
-        maxChar=s[l];
-        count=1;
-        l=r+1;
-
+    if(currCount>count){
+        count=currCount;
+        res=str[i];
     }
-    r++;
+    currCount=1;
   }
-  cout<<maxChar;
+  cout<<res;
+
+
 
          
  
