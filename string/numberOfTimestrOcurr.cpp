@@ -11,6 +11,15 @@
 
 using namespace std;
 int main(){
+    string str1,str2;
+    cin>>str1>>str2;
+    int count=0;
+    int l=0;
+    int r=0;
+    while(l<str1.length() && r<str2.length()){
+        if()
+    }
+    
 
     return 0;
 }

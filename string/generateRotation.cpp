@@ -17,7 +17,7 @@ int main(){
     cin>>s;
       string temp=s;
  for(int i=1;i<s.length();i++){
-            s=temp;
+        s=temp;
         reverse(s.begin(),s.begin()+i);
         reverse(s.begin()+i,s.end());
         reverse(s.begin(),s.end());
