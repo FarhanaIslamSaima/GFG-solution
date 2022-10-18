@@ -9,15 +9,14 @@ int main(){
     for(int i=0;i<a;i++){
         cin>>arr[i];
         mp[arr[i]]=i;
-        if(mp.find(k)!=mp.end()){
-            cout<<mp[k];
-            break;
-        }
-        else{
-            cout<<k-1;
-            break;
-        }
+    
      
+    }
+    if(mp[k]!=0){
+        cout<<mp[k];
+    }
+    else{
+        cout<<k-1;
     }
  
     return 0;
