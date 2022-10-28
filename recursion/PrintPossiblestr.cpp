@@ -2,8 +2,8 @@
 #include <vector>
 using namespace std;
 
-void possible(int ind, string s, vector<char> store){
-    if(store.size()==3){
+void possible(int ind, string s, vector<char> store,int k){
+    if(store.size()==k){
         for(auto it : store){
             cout<<it;
         }
@@ -11,9 +11,9 @@ void possible(int ind, string s, vector<char> store){
         
         return;
     }
-    for(int i=ind; i<2;i++){
+    for(int i=ind; i<s.length();i++){
         store.push_back(s[i]);
-        possible(0,s, store);
+        possible(0,s, store,k);
         store.pop_back();
 
     }
@@ -21,8 +21,11 @@ void possible(int ind, string s, vector<char> store){
 }
 int main(){
     string s;
+   
   vector<char>store;
     cin>>s;
-    possible(0, s, store);
+     int k;
+    cin>>k;
+    possible(0, s, store,k);
     return 0;
 }
