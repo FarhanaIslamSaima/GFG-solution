@@ -14,8 +14,7 @@ void permute(int ind,int arr[],int a){
       
     
        swap(arr[ind],arr[i]);
-       cout<<"i is: "<<i<<" ";
-           cout<<"index is: "<<ind<<" ";
+   
       
         permute(ind+1,arr,a);
                swap(arr[ind],arr[i]);

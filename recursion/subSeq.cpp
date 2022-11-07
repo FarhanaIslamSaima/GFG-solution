@@ -30,4 +30,4 @@ int main(){
     }
     subseq(0,arr,a,ds,sum);
     return 0;
-}
+} 

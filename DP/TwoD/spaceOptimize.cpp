@@ -29,7 +29,7 @@ for(int day=1;day<3;day++){
             }
         }
     }
-    dp=temp;
+    dp=temp; 
 }
 cout<<dp[3];
     return 0;

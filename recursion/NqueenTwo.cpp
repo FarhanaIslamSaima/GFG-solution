@@ -30,7 +30,7 @@ int main(){
     int n;
     cin>>n;
   string s(n,'.');
-    vector<string>board(n);
+    vector<string>board(n); 
     for(int i=0;i<n;i++){
         board[i]=s;
     }

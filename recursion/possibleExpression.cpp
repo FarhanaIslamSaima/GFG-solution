@@ -5,15 +5,8 @@ bool check(){
 
 }
 
-void possible(int ind,string s,int sum,int target,string operator,vector<string>store){
-    if(sum==target){
-       for(auto it: store){
-        cout<<it;
-       }
-       cout<<endl;
-       return;
-
-    }
+string possible(int ind,string s,int sum,int target,string operator,string store){
+  
 
     for(int i=ind;i<s.length()-1;i++){
         store.push_back(s.substr(0,i));
@@ -22,6 +15,9 @@ void possible(int ind,string s,int sum,int target,string operator,vector<string>
         if(check(store)){
             return store;
         }
+       
+            possible(ind+1,s,sum,target,operator,store);
+     
 
     }
     
