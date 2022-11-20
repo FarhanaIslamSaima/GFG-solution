@@ -1,8 +1,9 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int f(int ind1,int ind2,string &s1, string &s2, vector<vector<int>>&dp){
- int ans =0;
+string f(int ind1,int ind2,string &s1, string &s2, vector<vector<int>>&dp){
+    string temp="";
+ 
     for(int i=0;i<=ind1;i++){
         dp[i][0]=0;
     }
@@ -13,19 +14,45 @@ int f(int ind1,int ind2,string &s1, string &s2, vector<vector<int>>&dp){
         for(int j=1;j<=ind2;j++){
             if(s1[i-1]==s2[j-1]){
          dp[i][j]=1+dp[i-1][j-1];
-         ans=max(ans,dp[i][j]);
 
     }
     else{
-        dp[i][j]=0;
+        dp[i][j]=max(dp[i-1][j],dp[i][j-1]);
     }
  
 
 
         }
     }
+  
+  int i=ind1;
+  int j=ind2;
+  int len=dp[ind1][ind2];
+int index=len-1;
+for(int i=0;i<len;i++){
+    temp+='$';
+}
 
-    return ans;
+  while(i>0 && j>0){
+    if(s1[i-1]==s2[j-1]){
+        
+        temp[index]=s1[i-1];
+        index--;
+        i--;
+        j--;
+
+    }
+
+else if(dp[i-1][j]>dp[i][j-1]){
+    i--;
+}
+else{
+    j--;
+
+}
+  }
+
+return temp;
 
    
     
