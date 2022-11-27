@@ -3,18 +3,18 @@
 #include<algorithm>
 using namespace std;
 
-int f(int ind, int a, int k, int buy,int arr[]){
-    if(ind==a || k==0){
+int f(int ind,int transaction, int a, int k,int arr[]){
+    if(ind==a || transaction==2*k){
         return 0;
 
     }
     int profit;
-    if(buy==1){
-        profit=max(-arr[ind]+f(ind+1,a,k,0,arr),0+f(ind+1,a,k,1,arr));
+    if(transaction%2==0){
+        profit=max(-arr[ind]+f(ind+1,transaction+1,a,k,arr),0+f(ind+1,transaction,a,k,arr));
 
     }
     else{
-  profit=max(arr[ind]+f(ind+1,a,k-1,1,arr),0+f(ind+1,a,k,0,arr));
+  profit=max(arr[ind]+f(ind+1,transaction+1,a,k,arr),0+f(ind+1,transaction,a,k,arr));
     }
 
 
@@ -31,6 +31,6 @@ int main(){
     for(int i=0;i<a;i++){
         cin>>arr[i];
     }
-    cout<<f(0,a,k,1,arr);
+    cout<<f(0,0,a,k,arr);
     return 0;
 }
