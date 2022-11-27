@@ -9,14 +9,17 @@ int f(int ind,int buy,int a, int arr[],int cap){
  
 int profit=0;
 if(buy==1){
-    return max(-arr[ind]+f(ind+1,0,a,arr,cap),0+f(ind+1,1,a,arr,cap));
+    profit=max(-arr[ind]+f(ind+1,0,a,arr,cap),0+f(ind+1,1,a,arr,cap));
 
 
 }
 else{
-    return max(arr[ind]+f(ind+1,1,a,arr,cap-1),0+f(ind+1,0,a,arr,cap));
+
+
+    profit= max(arr[ind]+f(ind+1,1,a,arr,cap-1),0+f(ind+1,0,a,arr,cap));
 }
 
+return profit;
 
 
 }
@@ -29,6 +32,6 @@ int main(){
         cin>>arr[i];
 
     }
-    cout<<f(0,1,a-1,arr,cap);
+    cout<<f(0,1,a,arr,cap);
     return 0;
 }
