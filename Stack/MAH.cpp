@@ -45,7 +45,7 @@ int main(){
 
         for(int i=a-1;i>=0;i--){
          if(S.size()==0){
-            right.push_back(7);
+            right.push_back(a);
             
          }
          else if(S.size()>0 && S.top().first<arr[i]){
@@ -56,7 +56,7 @@ int main(){
                 S.pop();
             }
              if(S.size()==0){
-                right.push_back(7);
+                right.push_back(a);
             }
             else{
                 right.push_back(S.top().second);
@@ -70,7 +70,10 @@ int Max=0;
    
     width.push_back(right[i]-left[i]-1);
 
-    area.push_back(arr[i]*arr[i]);
+      cout<<left[i]<<" ";
+
+
+    area.push_back(arr[i]*width[i]);
     Max=max(area[i],Max);
      
         
