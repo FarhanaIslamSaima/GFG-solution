@@ -7,14 +7,15 @@ int f(int ind, int a,int prev_ind, int arr[]){
       return 0;
     }
 
- int len=0+f(ind+1,a,-1,arr);
-if(prev_ind==-1|| arr[ind]<arr[ind+1]){
-    len=(len,1+f(ind+1,a,ind,arr));
+ int notTake=0+f(ind+1,a,prev_ind,arr);
+ int take=0;
+if(prev_ind==-1|| arr[ind]>arr[prev_ind]){
+    take=1+f(ind+1,a,ind,arr);
 }
 
    
     
-
+int len=max(take,notTake);
 return len;
 
 
@@ -26,7 +27,7 @@ int main(){
     for(int i=0;i<a;i++){
         cin>>arr[i];
     }
-    cout<<f(0,a-1,-1,arr);
+    cout<<f(0,a,-1,arr);
 
     return 0;
 }
